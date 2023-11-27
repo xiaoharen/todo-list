@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url("./style/platform.css");
+    </style>
+    <style>
+        @import url("./style/blob.css");
+    </style>
+    <script src="./script/axios.js"></script>
+    <script src="./script/jquery-3.7.0.min.js"></script>
+    <script src="./script/cursor.js"></script>
+</head>
+
+<body>
+    <div class="video-bg">
+        <video width="320" height="240" autoplay loop muted>
+            <source src="./vedio/vedio_back.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="app">
+        <div class="header">
+            <div class="menu-circle">
+                <div class="blob animated" id="blob">
+                    <div class="eyes">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+            </div>
+            <div class="header-menu">
+                <a class="menu-link is-active" href="./xhr.html">傅小乐</a>
+                <a class="menu-link" href="./shj.html">小绿加油</a>
+                <a class="menu-link" href="./echo.html">Echo</a>
+                <a class="menu-link" href="./group.html">傅小乐小组的任务清单</a>
+            </div>
+            <div class="search-bar">
+                <input id="addTodo" type="text" placeholder="Add Todo" onkeydown="handleAdd(event)">
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="main-container">
+                <div class="content-wrapper">
+                    <div class="content-section">
+                        <!-- <div class="content-section-title" style="color: #5fcf65;font-size: 110%;">傅小乐小组的任务清单</div> -->
+                        <ul id="insert">
+                            <li class="adobe-product">
+                                <div class="products" style="color: #ffffff;">
+                                    <b><i>Create Time</i></b>
+                                </div>
+                                <span class="status" style="color: #ffffff;">
+                                    <span class="status-circle green"></span>
+                                    <b><i>Todo Infomation</i></b></span>
+                                <div class="button-wrapper" onclick="printTest(event)" style="color: #ffffff;">
+                                    <b><i>Delete</i></b>
+                                </div>
+                            </li>
+                            <script>
+                                fetch("http://localhost:7529/api/task/all", {
+                                    credentials: 'include'
+                                })
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        let usernames = {
+                                            1: "傅小乐",
+                                            2: "小绿加油",
+                                            3: "Echo",
+                                            6: "吴世鸿",
+                                            7: "三个椰子",
+                                            8: "林悦",
+                                            11: "吴炜杰",
+                                            12: "小番薯",
+                                            13: "王珂",
+                                            16: "苏悦雯",
+                                            17: "韦佳杏",
+                                            18: "胡安琪",
+                                            21: "张浩成",
+                                            22: "王鸿宇",
+                                            23: "朱颖"
+                                        };
+                                        let dataList = data.data;
+                                        for (let i = 0; i < dataList.length; i++) {
+                                            let uid = dataList[i].uid;
+                                            if (uid !== 1) {
+                                                continue;
+                                            }
+                                            let temp = dataList[i];
+                                            console.log(temp);
+                                            let username = usernames[temp.uid];
+                                            let creatTime = temp.createTime.slice(0, temp.createTime.length - 10);
+                                            let todoInfo = temp.taskInfo;
+                                            creatTime = creatTime.split('T');
+                                            let code = `<li class="adobe-product"><div class="products">`;//+ todo info
+                                            let code1 = `</div><span class="status"><span class="status-circle green"></span>`; //+ time
+                                            let code2 = `</span><div class="button-wrapper"><button class="content-button status-button open" onclick="handleDelete(event)">Del<div class="tid">`;
+                                            let code3 = temp.tid + `<div/></button></div></li>`
+                                            code = code + creatTime + code1 + todoInfo + code2 + code3;
+                                            let insert = document.getElementById("insert");
+                                            insert.insertAdjacentHTML('beforeend', code);
+                                        }
+                                    })
+                                    .catch(e => console.log('错误:', e));
+                            </script>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-app"></div>
+    </div>
+    <script src="./script/blob.js"></script>
+    <script src="./script/request.js"></script>
+    <script src="./script/platform.js"></script>
+</body>
+
+</html>

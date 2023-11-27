@@ -1,0 +1,33 @@
+{
+  "name": "plan-front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "oh-router": "^0.3.1",
+    "oh-router-react": "^0.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.20.0",
+    "react-router-dom": "^6.20.0"
+  },
+  "devDependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "antd": "^5.11.2",
+    "axios": "^1.6.2",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "vite": "^5.0.0"
+  }
+}
