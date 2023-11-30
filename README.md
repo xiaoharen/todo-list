@@ -65,7 +65,27 @@
 
 # 前端
 
+- 同页面内容切换
 
+  点击页面不同标签时显示/隐藏对应内容
+
+  ```javascript
+  $(function () {
+      $(".menu-link").click(function () {
+          $(".menu-link").removeClass("is-active");
+          $(this).removeClass("notify");
+          $(this).addClass("is-active");
+          $(this).addClass("notify");
+  
+          $(".my-script").addClass("invisible");
+          let thisClass = $(this).attr('id');
+          thisClass = thisClass.substr(2, thisClass.length);
+          $("." + thisClass).removeClass("invisible");
+      });
+  });
+  ```
+
+  
 
 # 后端
 

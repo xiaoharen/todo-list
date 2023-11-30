@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 /**
  * 用户服务测试
  *
- * @author Jaylen
+ *   
  */
 @SpringBootTest
 class UserServiceTest {

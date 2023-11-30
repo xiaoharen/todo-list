@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url("./style/platform.css");
+    </style>
+    <style>
+        @import url("./style/blob.css");
+    </style>
+    <script src="./script/axios.js"></script>
+    <script src="./script/jquery-3.7.0.min.js"></script>
+    <script src="./script/cursor.js"></script>
+    <script src="./script/platform.js"></script>
+</head>
+
+<body>
+    <div class="video-bg">
+        <video width="320" height="240" autoplay loop muted>
+            <source id="video-source" src="./video/xhr.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="app">
+        <div class="header">
+            <div class="menu-circle">
+                <div class="blob animated" id="blob">
+                    <div class="eyes">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+            </div>
+            <div class="header-menu">
+                <a id="a-xhr" class="menu-link is-active">傅小乐</a>
+                <a id="a-shj" class="menu-link">小绿加油</a>
+                <a id="a-echo" class="menu-link">Echo</a>
+                <a id="a-group" class="menu-link">傅小乐小组的任务清单</a>
+            </div>
+            <div class="search-bar">
+                <input id="addTodo" type="text" placeholder="Add Todo" onkeydown="handleAdd(event)">
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="main-container">
+                <div class="content-wrapper">
+                    <div class="content-section">
+                        <!-- <div class="content-section-title" style="color: #5fcf65;font-size: 110%;">傅小乐小组的任务清单</div> -->
+                        <ul id="insert">
+                            <li class="adobe-product">
+                                <div class="products" style="color: #ffffff;">
+                                    <b><i>Create Time</i></b>
+                                </div>
+                                <span class="status" style="color: #ffffff;">
+                                    <span class="status-circle green"></span>
+                                    <b><i>Todo Infomation</i></b></span>
+                                <div class="button-wrapper" style="color: #ffffff;">
+                                    <b><i>Delete/Who</i></b>
+                                </div>
+                            </li>
+                            <script src="./script/xhr.js"></script>
+                            <script src="./script/shj.js"></script>
+                            <script src="./script/echo.js"></script>
+                            <script src="./script/group.js"></script>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-app"></div>
+    </div>
+    <script src="./script/blob.js"></script>
+    <script src="./script/request.js"></script>
+</body>
+
+</html>

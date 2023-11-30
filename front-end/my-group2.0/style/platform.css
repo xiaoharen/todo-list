@@ -499,3 +499,7 @@ img {
 body::-webkit-scrollbar {
   display: none;
 }
+
+.invisible {
+    display: none;
+}

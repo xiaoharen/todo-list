@@ -1,2 +1,2 @@
-const FrontURL = "http://101.43.23.111/";
+const FrontURL = "http://localhost:3000/";
 export default FrontURL;

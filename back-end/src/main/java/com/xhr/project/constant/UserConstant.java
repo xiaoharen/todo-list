@@ -3,7 +3,7 @@ package com.xhr.project.constant;
 /**
  * 用户常量
  *
- * @author Jaylen
+ *   
  */
 public interface UserConstant {
 
